@@ -92,8 +92,8 @@ http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
 	А) Создаём скрипт со следующим содержанием (vim script):
 
 	cd Group_25/
-	mkdir Linux_homework 2_homework 3_homework
-	cd Linux_homework
+	mkdir 29.11.2021_Terminal_Linux Теория_тестирования 02.12.2021_Git_intro
+	cd 29.11.2021_Terminal_Linux
 	touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
 	mkdir f_1 f_2 f_3
 	ls -la

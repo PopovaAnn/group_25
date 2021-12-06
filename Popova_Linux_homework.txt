@@ -1,0 +1,120 @@
+1) Посмотреть где я: pwd
+/c/group_25/
+
+2) Создать папку: mkdir Popova_homework
+
+3) Зайти в папку: cd Popova_homework/
+
+4) Создать три папки: mkdir 29.11.2021_Terminal_Linux Теория_тестирования 02.12.2021_Git_intro
+
+5) Зайти в любую папку: cd 29.11.2021_Terminal_Linux
+
+6) Создать 5 файлов (3 txt, 2 json): touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
+ 
+7) Создать три папки: mkdir f_1 f_2 f_3
+
+8) Вывести список содержимого папки: ls -la
+
+9) + Открыть любой txt файл: vim file_1.txt
+
+10) + Написать туда что-нибудь, любой текст: 
+Popova
+Anna
+Homework
+Linux
+QA Lead
+Vadim 
+Ksendzov
+
+11) + Сохранить и выйти: :wq
+
+12) Выйти из папки на уровень выше: cd ../ (в результате я нахожусь в папке /c/group_25/Popova_homework/Popova_Linux_homework/Linux_homework)
+-- Сделаем промежуточный просмотр списка лежащих в директории файлов
+ls -la
+$ ls -la
+total 8
+drwxr-xr-x 1 Home 197121 0 Dec  1 19:50 ./
+drwxr-xr-x 1 Home 197121 0 Dec  1 15:12 ../
+drwxr-xr-x 1 Home 197121 0 Dec  1 19:50 f_1/
+drwxr-xr-x 1 Home 197121 0 Dec  1 15:15 f_2/
+drwxr-xr-x 1 Home 197121 0 Dec  1 15:15 f_3/
+-rw-r--r-- 1 Home 197121 0 Dec  1 15:15 file_1.txt
+-rw-r--r-- 1 Home 197121 0 Dec  1 15:15 file_2.txt
+-rw-r--r-- 1 Home 197121 0 Dec  1 15:15 file_3.txt
+-rw-r--r-- 1 Home 197121 0 Dec  1 15:14 file_4.json
+-rw-r--r-- 1 Home 197121 0 Dec  1 15:13 file_5.json
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку: mv file_2.txt file_3.txt f_2
+
+14) Скопировать любые два файла, которые вы создали, в любую другую папку: cp file_4.json file_5.json f_3
+
+15) Найти файл по имени: find -name file_1.txt
+./Popova_Linux_homework/Linux_homework/f_1/file_1.txt
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает: tail -f file_1.txt
+Popova
+Anna
+Homework
+Linux
+QA Lead
+Vadim
+Ksendzov
+esfgggggggg
+wefsegsrrht
+acfsrg
+
+17) Вывести несколько первых строк из текстового файла: head -3 file_1.txt
+Popova
+Anna
+Homework
+
+18) Вывести несколько последних строк из текстового файла: tail -4 file_1.txt (https://www.opennet.ru/docs/RUS/linux_base/node160.html)
+Linux
+QA Lead
+Vadim
+Ksendzov
+	
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает:less file_1.txt (выход из less q)
+
+20) Вывести дату и время:date 
+Thu Dec  2 00:24:43 RTZ 2021
+
+
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+
+{"age":"32","family":{"children":[["Alex",24],["Kate",12]],"pets":{"cat":{"age":3,"name":"Sunny"},"dog":{"age":4,"name":"Luky"}},"u_salary_1_5_year":4000},"name":"Vadim","salary":1000}
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+	А) Создаём скрипт со следующим содержанием (vim script):
+
+	cd Group_25/
+	mkdir Linux_homework 2_homework 3_homework
+	cd Linux_homework
+	touch file_1.txt file_2.txt file_3.txt file_4.json file_5.json
+	mkdir f_1 f_2 f_3
+	ls -la
+	mv file_2.txt file_3.txt f_2
+
+	Б) Делаем файл исполняемым : chmod ugo+x script	
+
+	В) Запускаем скрипт на выполнение: ./script
+
+	Г) Результат: скрипт выполнен
+
+Home@LAPTOP-LF16NMVK MINGW64 /c/group_25
+$ ./script
+total 8
+drwxr-xr-x 1 Home 197121 0 Dec  2 02:12 .
+drwxr-xr-x 1 Home 197121 0 Dec  2 02:12 ..
+drwxr-xr-x 1 Home 197121 0 Dec  2 02:12 f_1
+drwxr-xr-x 1 Home 197121 0 Dec  2 02:12 f_2
+drwxr-xr-x 1 Home 197121 0 Dec  2 02:12 f_3
+-rw-r--r-- 1 Home 197121 0 Dec  2 02:12 file_1.txt
+-rw-r--r-- 1 Home 197121 0 Dec  2 02:12 file_2.txt
+-rw-r--r-- 1 Home 197121 0 Dec  2 02:12 file_3.txt
+-rw-r--r-- 1 Home 197121 0 Dec  2 02:12 file_4.json
+-rw-r--r-- 1 Home 197121 0 Dec  2 02:12 file_5.json

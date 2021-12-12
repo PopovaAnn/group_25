@@ -10,8 +10,28 @@
 - git branch Mobile_testing
 
 2. Запушить все ветки на внешний репозиторий
-3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+git push -u origin Postman Jmeter Checklist Bug_Reports SQL Charles Mobile_testing
+
+3. В ветке Bug_Reports сделать текстовый документ со структурой баг репорта
+git checkout Bug_reports
+touch bug_report_structure.txt 
+vim bug_report_structure.txt 
+I
+1. ID
+2. Author
+3. Title
+4. Summary
+5. Steps to reproduce
+6. Actual result
+7. Expected result
+8. Severity
+9. Priority
+Esc
+:wq
+
 4. Запушить структуру багрепорта на внешний репозиторий
+
+
 5. Вмержить ветку Bag Reports в Main
 6. Запушить main на внешний репозиторий.
 7. В ветке CheckLists набросать структуру чек листа.

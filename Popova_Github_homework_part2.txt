@@ -30,6 +30,7 @@ Esc
 :wq
 
 4. Запушить структуру багрепорта на внешний репозиторий
+<<<<<<< HEAD
 git add bug_report_structure.txt
 git commit -m "Add bug report structure"
 git push 
@@ -95,3 +96,13 @@ git push
 10. Синхронизировать Внешнюю и Локальную ветки Main
 git checkout main
 git pull 
+=======
+
+
+5. Вмержить ветку Bag Reports в Main
+6. Запушить main на внешний репозиторий.
+7. В ветке CheckLists набросать структуру чек листа.
+8. Запушить структуру на внешний репозиторий
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+10. Синхронизировать Внешнюю и Локальную ветки Main
+>>>>>>> 54fab9b8905d8f3ce3c9dd90540f3509a6f01a36

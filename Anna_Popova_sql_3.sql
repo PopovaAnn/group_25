@@ -68,12 +68,12 @@
    join roles on roles.id=RE.role_id
    where role_name like '%Automation QA%';
  
- --12. Вывести имена и зарплаты Junior специалистов
-      select employee_name, monthly_salary from roles_employee RE
-   join employees on RE.employee_id= employees.id 
-   join roles on roles.id=RE.role_id
-   join employee_salary ES on ES.employee_id = RE.employee_id 
-   join salary on ES.salary_id = salary.id
+ --12. Вывести имена и зарплаты Junior специалистов 
+      select employees.employee_name, monthly_salary, role_name from employees 
+   join employee_salary on employee_salary.employee_id = employees.id 
+   join salary on employee_salary.salary_id = salary.id 
+   join roles_employee on employees.id = roles_employee.employee_id 
+   join roles on roles_employee.role_id = roles.id 
    where role_name like '%Junior%';
  
  --13. Вывести имена и зарплаты Middle специалистов
@@ -98,7 +98,7 @@
    join roles on roles.id=RE.role_id
    join employee_salary ES on ES.employee_id = RE.employee_id 
    join salary on ES.salary_id = salary.id
-   where role_name like '%Java%';
+   where role_name like '%Java developer';
  
  --16. Вывести зарплаты Python разработчиков
       select monthly_salary from roles_employee RE
@@ -122,7 +122,7 @@
    join roles on roles.id=RE.role_id
    join employee_salary ES on ES.employee_id = RE.employee_id 
    join salary on ES.salary_id = salary.id
-   where role_name like '%Middle Java%';
+   where role_name like 'Middle JavaScript%';
  
  --19. Вывести имена и зарплаты Senior Java разработчиков
      select employee_name, monthly_salary from roles_employee RE
@@ -130,7 +130,7 @@
    join roles on roles.id=RE.role_id
    join employee_salary ES on ES.employee_id = RE.employee_id 
    join salary on ES.salary_id = salary.id
-   where role_name like '%Senior Java%';
+   where role_name like 'Senior Java developer';
  
  --20. Вывести зарплаты Junior QA инженеров
      select employee_name, monthly_salary from roles_employee RE
@@ -138,7 +138,7 @@
    join roles on roles.id=RE.role_id
    join employee_salary ES on ES.employee_id = RE.employee_id 
    join salary on ES.salary_id = salary.id
-   where role_name like '%Junior% %QA%';
+   where role_name like '%Junior%QA%';
  
  --21. Вывести среднюю зарплату всех Junior специалистов
       select AVG(monthly_salary) from roles_employee RE
@@ -154,7 +154,7 @@
    join roles on roles.id=RE.role_id
    join employee_salary ES on ES.employee_id = RE.employee_id 
    join salary on ES.salary_id = salary.id
-   where role_name like '%Java%'; 
+   where role_name like '%JavaScript%'; 
  
  --23. Вывести минимальную ЗП QA инженеров
       select min(monthly_salary) from roles_employee RE
@@ -173,27 +173,21 @@
    where role_name like '%QA%';
  
  --25. Вывести количество QA инженеров
-     select count(role_id) from roles_employee RE
+      select count(role_id) from roles_employee RE
    join employees on RE.employee_id= employees.id 
    join roles on roles.id=RE.role_id
-   join employee_salary ES on ES.employee_id = RE.employee_id 
-   join salary on ES.salary_id = salary.id
    where role_name like '%QA%';
  
  --26. Вывести количество Middle специалистов.
       select count(role_id) from roles_employee RE
    join employees on RE.employee_id= employees.id 
    join roles on roles.id=RE.role_id
-   join employee_salary ES on ES.employee_id = RE.employee_id 
-   join salary on ES.salary_id = salary.id
-   where role_name like '%Middle%';
+     where role_name like '%Middle%';
  
  --27. Вывести количество разработчиков
      select count(role_id) from roles_employee RE
    join employees on RE.employee_id= employees.id 
    join roles on roles.id=RE.role_id
-   join employee_salary ES on ES.employee_id = RE.employee_id 
-   join salary on ES.salary_id = salary.id
    where role_name like '%developer%';
  
  --28. Вывести фонд (сумму) зарплаты разработчиков.
